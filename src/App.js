@@ -1,10 +1,11 @@
 import React from "react";
+import BasicForm from "./components/BasicForm";
 
 
 function App() {
   return (
-    <div >
-    
+    <div className= 'app'>
+  <BasicForm/>
     </div>
   );
 }
