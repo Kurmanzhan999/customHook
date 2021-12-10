@@ -4,6 +4,17 @@
     margin: 2rem auto;
     animation: meals-appear 1s ease-out forwards;
 }
+.mealIsloading{
+    text-align: center;
+    color: rgb(10, 9, 9);
+    font-size: 26px;
+}
+
+.mealIsError {
+    text-align: center;
+    color: rgb(180, 52, 52);
+    font-size: 26px;
+}
 .meals ul {
     list-style: none;
     margin: 0;
