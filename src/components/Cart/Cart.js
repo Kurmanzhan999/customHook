@@ -35,10 +35,7 @@ fetch('https://react-http-test-d3459-default-rtdb.firebaseio.com/orders.json',{
         ordereditem: cartCtx.items
     })
 })
-
-
 }
-    
     const cartItem = (<ul className={classes["create-items"]}>
             {
               cartCtx.items.map(item => (
