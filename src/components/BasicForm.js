@@ -1,7 +1,9 @@
 import useInput from "../hooks/use-input";
 
 const BasicForm = () => {
-
+const nameReg =/^[a-z\d]{5,12}$/i
+const emailReg = 
+/^(([a-zA-Z0-9_\-\.]+)@([a-zA-Z0-9_\-\.]+)\.([a-zA-Z]{2,5}){1,25})+([;.](([a-zA-Z0-9_\-\.]+)@{[a-zA-Z0-9_\-\.]+0\.([a-zA-Z]{2,5}){1,25})+)*$/;;
   const {
 
       value: enterdName,
@@ -9,7 +11,7 @@ const BasicForm = () => {
       hasError: nameInputHasError,
       valueChangeHandler: nameChangeHandler,
       inputBlurHandler: nameInputBlurHandler 
-  } = useInput((value) => value.trim().length >5);
+  } = useInput((value) => nameReg.test(value));
 
   const {
       value: enteredLastdName,
@@ -17,7 +19,7 @@ const BasicForm = () => {
       hasError: lastNameInputHasError,
       valueChangeHandler: lastNameChangeHandler,
       inputBlurHandler: lastNameInputBlurHandler 
-  } = useInput((value) => value.trim().length > 6 );
+  } = useInput((value) => value.trim().length !== 9 );
 
 
   
@@ -27,7 +29,7 @@ const BasicForm = () => {
       hasError: emailInputHasError,
       valueChangeHandler: emailChangeHandler,
       inputBlurHandler: emailInputBlurHandler 
-  } = useInput((value) => /^[0-3]+$/.test(value.enteredEmail));
+  } = useInput((value) => emailReg.test(value));
  
   let formIsValid = false;
     if (enteredNameIsValid 
@@ -63,7 +65,7 @@ const BasicForm = () => {
               onBlur={nameInputBlurHandler}
               value={enterdName}
            />
-           {nameInputHasError && <p>You have entered an invalid email address </p>}
+           {nameInputHasError && <p>Username must be lowercase including numbers and contain 5-12 characters</p>}
         </div>
         <div className={lastNameInputClasses}>
           <label htmlFor='name'>Last Name</label>
@@ -74,7 +76,7 @@ const BasicForm = () => {
               onBlur={lastNameInputBlurHandler}
               value={enteredLastdName}
             />
-            {lastNameInputHasError && <p>Last name is invalid</p> }
+            {lastNameInputHasError && <p>Last name is invalid,should be no more than 9 letters</p> }
         </div>
       </div>
       <div className={emailInputClasses}>
@@ -86,7 +88,7 @@ const BasicForm = () => {
             onBlur={emailInputBlurHandler}
             value={enteredEmail}
          />
-         {emailInputHasError && <p>Email should include @</p>}
+         {emailInputHasError && <p>Email must be a valid address, e.g. kurmanzhan@gmail.com</p>}
       </div>
       <div className='form-actions'>
         <button>Submit</button>
