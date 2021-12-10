@@ -1,5 +1,6 @@
 import classes from './Checkout.module.css';
 import { useRef, useState } from 'react';
+import Modal from '../UI/Modal';
 
 const isEmpty = (value) => value.trim() === '';
 const isNotFiveChars = (value) => value.trim().length !== 5;
@@ -11,6 +12,10 @@ const CheckOut = (props) => {
     city: true,
     postal: true,
   });
+const [isOrdered, setIsordered] = useState(false);
+const sentOrder = ()=>{
+  setIsordered(true)
+}
 
   const nameInputRef = useRef();
   const streetInputRef = useRef();
@@ -66,7 +71,7 @@ const CheckOut = (props) => {
   const cityControlClasses = `${classes.control} ${
     formInputsValidity.city ? '' : classes.invalid
   }`;
-
+const sent = <div className='sent'>sent !</div>
   return (
     <form className={classes.form} onSubmit={confirmHandler}>
       <div className={nameControlClasses}>
@@ -93,10 +98,16 @@ const CheckOut = (props) => {
         <button type="button" onClick={props.onCancel}>
           Cancel
         </button>
-        <button className={classes.submit}>Confirm</button>
+        <button className={classes.submit} onClick={sentOrder}>Confirm</button>
+        <Modal>
+        {isOrdered && sent}
+
+       </Modal>
+      
       </div>
     </form>
   );
+  
 };
 
 export default CheckOut;

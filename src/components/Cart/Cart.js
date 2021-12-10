@@ -27,6 +27,7 @@ const orderItemHandler = item => {
     setIsCheckOut(true);
 }
 
+
 const submitOrderhandler = (userData) => {
 fetch('https://react-http-test-d3459-default-rtdb.firebaseio.com/orders.json',{
     method: 'POST',
@@ -35,6 +36,7 @@ fetch('https://react-http-test-d3459-default-rtdb.firebaseio.com/orders.json',{
         ordereditem: cartCtx.items
     })
 })
+
 }
     const cartItem = (<ul className={classes["create-items"]}>
             {
@@ -54,6 +56,8 @@ fetch('https://react-http-test-d3459-default-rtdb.firebaseio.com/orders.json',{
   <button className={classes['button-alt']} onClick={props.onCloseCart}>Close</button>
 {hasItems &&   <button className={classes.button} onClick={orderItemHandler}>Order</button>}
 </div>
+
+
     return(
         <Modal onCloseCart={props.onCloseCart}>
                 {cartItem}
@@ -62,7 +66,10 @@ fetch('https://react-http-test-d3459-default-rtdb.firebaseio.com/orders.json',{
            <span> {totalAmount}</span>
            </div>
            
-           {isCheckOut && <CheckOut onCancel={props.onCloseCart} onConfirm={submitOrderhandler}/>}
+           {isCheckOut && <CheckOut onCancel={props.onCloseCart} 
+           onConfirm={submitOrderhandler}
+
+           />}
            {!isCheckOut && modalActions}
        
         </Modal>
