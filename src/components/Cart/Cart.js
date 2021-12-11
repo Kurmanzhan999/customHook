@@ -28,8 +28,8 @@ const orderItemHandler = item => {
 }
 
 
-const submitOrderhandler = (userData) => {
-fetch('https://react-http-test-d3459-default-rtdb.firebaseio.com/orders.json',{
+const submitOrderhandler = async(userData) => {
+await fetch('https://react-http-test-d3459-default-rtdb.firebaseio.com/orders.json',{
     method: 'POST',
     body: JSON.stringify({
         user:userData,
