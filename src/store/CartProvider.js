@@ -6,6 +6,7 @@ import { useReducer } from 'react';
 const defaultState = {
     items: [],
     totalAmount:0,
+    // isOrdered: false
 };
 
 const cartReducer = (state,action) => {
@@ -51,6 +52,7 @@ const cartReducer = (state,action) => {
             updatedItems = [...state.items];// bashka peremennyiga,kalgan ozgorulgan itemdrdy kopiruem
             updatedItems[existingCartItemIndex] = updatedItem; //existingCartItemIndex di updatedItem ge almashtyryp koiup jatabyz
         }
+       
         return {
             items: updatedItems,  //dipatchka otvet kylyp,vozvrashaem eti objects 
             totalAmount:updatedTotalAmount
@@ -71,6 +73,7 @@ const CartProvider = props => {
         dispatchCart({type: 'REMUVE',id: id})
       // dispatch vsegda pustoi object  ,obezatel'noe svoistvo type: kandai deistvie atkarsa oshondoi nazvanie berebiz e.g REMOVE i eshe odno svoistvo chto my udolyaem,idge karap budem udolyat'
     };
+  
     const cartContext = {  //vremmennoe hranilishe,k-e hranit sebe akyualnye znachenie k-e potom budem ispol'zovat'
         items: cartState.items,
         totalAmount:cartState.totalAmount,

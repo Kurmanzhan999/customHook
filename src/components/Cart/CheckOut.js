@@ -1,6 +1,7 @@
 import classes from './Checkout.module.css';
 import { useRef, useState } from 'react';
 import Ordered from '../UI/Ordered';
+// import '../UI/Ordered.module.css'
 const isEmpty = (value) => value.trim() === '';
 const isNotFiveChars = (value) => value.trim().length !== 5;
 
@@ -11,10 +12,10 @@ const CheckOut = (props) => {
     city: true,
     postal: true,
   });
-// const [isOrdered, setIsordered] = useState(false);
-// const sentOrder = ()=>{
-//   setIsordered(true)
-// }
+const [isOrdered, setIsordered] = useState(false);
+const sentOrder = ()=>{
+  setIsordered(true)
+}
 
   const nameInputRef = useRef();
   const streetInputRef = useRef();
@@ -98,8 +99,8 @@ const CheckOut = (props) => {
           Cancel
         </button>
         <button className={classes.submit} >Confirm</button>
-        {/* <button className={classes.submit} onClick={sentOrder}>Confirm</button> */}
-        {/* {isOrdered && <Ordered/>} */}
+        <button className={classes.submit} onClick={sentOrder}>Confirm</button> 
+        {isOrdered && <Ordered/>}
 
       
       </div>
