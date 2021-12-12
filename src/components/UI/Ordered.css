@@ -1,17 +1,9 @@
-.backdrop {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    z-index: 20;
-    background-color: rgba(7, 4, 4, 0.75);
-}
+
 .modal {
     
     position: fixed;
     top: 20vh;
-    height: 90px;
+    height: 150px;
     left: 5%;
     width: 90%;
     background-color: rgb(56, 206, 36);
@@ -20,6 +12,7 @@
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.25);
     z-index: 30;
     animation: slide-down 300ms ease-out forwards;
+    
 }
 @media (min-width: 768px) {
     .modal {
@@ -30,8 +23,8 @@
 }
 @keyframes slide-down {
     from {
-        opacity: 0;
-        transform: translateY(-9rem);
+        /* opacity: 0; */
+        /* transform: translateY(-9rem); */
     }
     to {
         opacity: 1;

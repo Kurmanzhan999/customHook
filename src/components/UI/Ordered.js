@@ -1,22 +1,14 @@
-// import { useState } from 'react';
-// import CheckOut from '../Cart/CheckOut';
-// import Modal from './Modal';
+import Modal from './Modal';
 import './Ordered.css'
-const Ordered = (props) => {
-    // const[show, setisShow] =useState(false);
+const Ordered = () => {
 
     return(
-        <>
-  <div className='backdrop'>
-   
-    </div>
-    <h2 className='modal'>
-      Your order  orderd successfully
-    <button onClick={props.close}>Clouse</button>
-
-    </h2>
-        </>
-
+        <Modal>
+            <h2>React Meals App</h2>
+             <h2 className='modal'>
+               Thank You! Your order orderd successfully!
+             </h2>
+        </Modal>
     )
 }
 export default Ordered;

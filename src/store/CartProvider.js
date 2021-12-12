@@ -33,12 +33,13 @@ const cartReducer = (state,action) => {
             updatedItems= state.items.concat(action.item) 
         }
         return {
-            items: updatedItems,
+            items: updatedItems, //vozvrashaem eti objects kak otvet na dispatch
             totalAmount: updatedTotalAmount,
         }
     }
 
     if(action.type === 'REMOVE'){
+        //findIndex menen item id menen action dan kelgen id sravnivaem
         const existingCartItemIndex = state.items.findIndex(
             item => item.id === action.id
         );
@@ -52,7 +53,6 @@ const cartReducer = (state,action) => {
             updatedItems = [...state.items];// bashka peremennyiga,kalgan ozgorulgan itemdrdy kopiruem
             updatedItems[existingCartItemIndex] = updatedItem; //existingCartItemIndex di updatedItem ge almashtyryp koiup jatabyz
         }
-       
         return {
             items: updatedItems,  //dipatchka otvet kylyp,vozvrashaem eti objects 
             totalAmount:updatedTotalAmount
@@ -73,7 +73,7 @@ const CartProvider = props => {
         dispatchCart({type: 'REMUVE',id: id})
       // dispatch vsegda pustoi object  ,obezatel'noe svoistvo type: kandai deistvie atkarsa oshondoi nazvanie berebiz e.g REMOVE i eshe odno svoistvo chto my udolyaem,idge karap budem udolyat'
     };
-  
+ 
     const cartContext = {  //vremmennoe hranilishe,k-e hranit sebe akyualnye znachenie k-e potom budem ispol'zovat'
         items: cartState.items,
         totalAmount:cartState.totalAmount,
