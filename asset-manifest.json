@@ -1,0 +1,24 @@
+{
+  "files": {
+    "main.css": "/planet-galaxy/static/css/main.4bcbb3c2.chunk.css",
+    "main.js": "/planet-galaxy/static/js/main.dfa97c12.chunk.js",
+    "main.js.map": "/planet-galaxy/static/js/main.dfa97c12.chunk.js.map",
+    "runtime-main.js": "/planet-galaxy/static/js/runtime-main.13a4aa25.js",
+    "runtime-main.js.map": "/planet-galaxy/static/js/runtime-main.13a4aa25.js.map",
+    "static/js/2.4282656a.chunk.js": "/planet-galaxy/static/js/2.4282656a.chunk.js",
+    "static/js/2.4282656a.chunk.js.map": "/planet-galaxy/static/js/2.4282656a.chunk.js.map",
+    "index.html": "/planet-galaxy/index.html",
+    "static/css/main.4bcbb3c2.chunk.css.map": "/planet-galaxy/static/css/main.4bcbb3c2.chunk.css.map",
+    "static/js/2.4282656a.chunk.js.LICENSE.txt": "/planet-galaxy/static/js/2.4282656a.chunk.js.LICENSE.txt",
+    "static/media/HeroImage.css": "/planet-galaxy/static/media/heroImg.717ecc48.jpg",
+    "static/media/meyou.ae717e96.jpg": "/planet-galaxy/static/media/meyou.ae717e96.jpg",
+    "static/media/pod.30776f82.jpg": "/planet-galaxy/static/media/pod.30776f82.jpg",
+    "static/media/space.41584ed5.mp4": "/planet-galaxy/static/media/space.41584ed5.mp4"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.13a4aa25.js",
+    "static/js/2.4282656a.chunk.js",
+    "static/css/main.4bcbb3c2.chunk.css",
+    "static/js/main.dfa97c12.chunk.js"
+  ]
+}
